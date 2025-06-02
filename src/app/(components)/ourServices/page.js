@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 
-const ourservices = () => {
+const ourServices = () => {
   const services = [
     {
       title: 'Garantía',
@@ -54,4 +54,4 @@ const ourservices = () => {
   )
 }
 
-export default ourservices
+export default ourServices
