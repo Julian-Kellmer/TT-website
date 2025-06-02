@@ -27,9 +27,7 @@ const ourServices = () => {
 
   return (
     <section className='flex flex-col items-center gap-16 px-4 md:px-16 py-10'>
-      <h1 className='text-[2.5rem] md:text-[4rem] tracking-tighter font-semibold text-center'>
-        
-      </h1>
+      <h1 className='text-[2.5rem] md:text-[4rem] tracking-tighter font-semibold text-center'></h1>
 
       <div className='grid grid-cols-1 md:grid-cols-4 gap-4 w-full'>
         {services.map((service, index) => (
