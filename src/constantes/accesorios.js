@@ -1,0 +1,8 @@
+export const TYPE_PENCIL = 'PENCIL'
+export const TYPE_MAGIC_TRACKPAD = 'MAGIC_TRACKPAD'
+export const TYPE_AIR_TAG = 'AIR_TAG'
+export const TYPE_APPLE_TV = 'APPLE_TV'
+export const TYPE_MAGIC_KEYBOARD = 'MAGIC_KEYBOARD'
+export const TYPE_MAGIC_MOUSE = 'ADAPTADOR'
+export const TYPE_CARGADOR = 'CARGADOR'
+export const TYPE_ADAPTADOR = 'ADAPATADOR'

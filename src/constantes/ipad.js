@@ -1,0 +1,5 @@
+export const TYPE_AIR = 'AIR'
+export const TYPE_PRO = 'PRO'
+export const TYPE_GENERACION = 'GENERACION'
+export const CHIP_M3 = 'M3'
+export const CHIP_M2 = 'M2'

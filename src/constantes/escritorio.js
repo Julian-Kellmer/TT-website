@@ -1,0 +1,7 @@
+export const BRAND_DELL = 'DELL'
+export const BRAND_HP = 'HP'
+export const BRAND_ASUS = 'ASUS'
+export const BRAND_LENOVO = 'LENOVO'
+export const BRAND_ACEMAGICAN = 'ACEMAGICAN'
+export const SIZE_PC = 'PC'
+export const SIZE_MINI = 'MINI'

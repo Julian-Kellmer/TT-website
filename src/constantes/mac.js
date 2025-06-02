@@ -1,0 +1,7 @@
+export const TYPE_STUDIO_DISPLAY = 'STUDIO_DISPLAY '
+export const TYPE_IMAC = 'IMAC'
+export const TYPE_MAC_STUDIO = 'MAC_STUDIO'
+export const TYPE_MAC_MINI = 'MAC_MINI'
+export const CHIP_M4 = 'M4'
+export const CHIP_M4_PRO = 'M4_PRO'
+export const CHIP_M3 = 'M3'
