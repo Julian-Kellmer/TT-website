@@ -1,11 +1,11 @@
 import React from 'react'
-import Banner from './(components)/banner'
-import AutoCarousel from './(components)/auto-carusel'
-import CategoryCarrusel from './(components)/categoryCarousel/CategoryCarrusel'
-import TtNumbers from './(components)/TTNumbers/ttNumbers'
-import MostValuedProducts from './(components)/MostValueProd/MostValueProd'
-import TrustedClients from './(components)/TrustedClients/page'
-import OurServices from './(components)/OurServices'
+import Banner from './ components/banner'
+import AutoCarousel from './ components/auto-carusel'
+import CategoryCarrusel from './ components/categoryCarousel/CategoryCarrusel'
+import TtNumbers from './ components/TTNumbers/ttNumbers'
+import MostValuedProducts from './ components/MostValueProd/MostValueProd'
+import TrustedClients from './ components/TrustedClients/page'
+import OurServices from './ components/OurServices'
 const carouselImages = [
   {
     src: '/images/banners/banner1.jpg',

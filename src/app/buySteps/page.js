@@ -1,7 +1,7 @@
 'use client'
 import { useState, useRef, useEffect } from 'react'
-import ProgressBar from '../(components)/ProgresBar'
-import Step from '../(components)/Step'
+import ProgressBar from '../ components/ProgresBar'
+import Step from '../ components/Step'
 
 const steps = [
   {
@@ -101,8 +101,6 @@ const TengoTecnoGuide = () => {
           </div>
         ))}
       </div>
-
-      
     </div>
   )
 }
