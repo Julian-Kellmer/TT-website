@@ -7,6 +7,7 @@ export default async function ProductPage({ params }) {
   const products = await getProducts({ category: categoria })
   const selectProduct = products.find((p) => p.id === id)
   if (!selectProduct) {
+    console.log(products,selectProduct,'a continuacion se vera el id del producto seleccionado ',id )
     return (
       <div className='container mx-auto px-4 py-8 mt-[15vh]'>
         <h1 className='text-2xl font-bold text-center text-red-600'>

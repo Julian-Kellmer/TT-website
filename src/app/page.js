@@ -23,7 +23,6 @@ const carouselImages = [
     src: '/images/banners/pruebafinal.jpg',
     alt: 'Garantía extendida en todos nuestros productos',
   },
-  
 ]
 const page = () => {
   return (
@@ -34,7 +33,7 @@ const page = () => {
       <TtNumbers />
       <MostValuedProducts />
       <TrustedClients />
-      <OurServices/>
+      <OurServices />
     </div>
   )
 }

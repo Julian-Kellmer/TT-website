@@ -1,7 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
-
-const ourServices = () => {
+const index = () => {
   const services = [
     {
       title: 'Garantía',
@@ -52,4 +51,4 @@ const ourServices = () => {
   )
 }
 
-export default ourServices
+export default index

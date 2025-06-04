@@ -23,11 +23,27 @@ const InfoProduct = ({ categoria, selectProduct }) => {
     ? selectProduct.image.map((url) => getPublicDriveUrl(url.trim()))
     : selectProduct.image.split(',').map((url) => getPublicDriveUrl(url.trim()))
 
+  // 🧠 Autoseleccionar valores únicos
+  useEffect(() => {
+    if (!variants.length) return
+
+    const newSelectedSpecs = { ...selectedSpecs }
+
+    optionKeys.forEach((key, index) => {
+      const options = getOptionsForKey(index)
+      if (options.length === 1 && !newSelectedSpecs[key]) {
+        newSelectedSpecs[key] = options[0]
+      }
+    })
+
+    setSelectedSpecs(newSelectedSpecs)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [variants])
+
   const getOptionsForKey = (keyIndex) => {
     const key = optionKeys[keyIndex]
     if (!key) return []
 
-    // Filtrar variantes según specs seleccionadas hasta ahora
     const filtered = variants.filter((variant) =>
       optionKeys
         .slice(0, keyIndex)
@@ -38,7 +54,6 @@ const InfoProduct = ({ categoria, selectProduct }) => {
         )
     )
 
-    // Sacar opciones únicas disponibles para este paso
     return [...new Set(filtered.map((variant) => variant[key]))]
   }
 
@@ -48,11 +63,17 @@ const InfoProduct = ({ categoria, selectProduct }) => {
     ? variants.find((v) => optionKeys.every((k) => v[k] === selectedSpecs[k]))
     : null
 
+  const canBuy = !variants.length || !!selectedVariant
+  const priceToDisplay = !variants.length
+    ? selectProduct.price
+    : selectedVariant
+    ? selectedVariant.price
+    : null
+
   const handleSpecSelect = (key, value) => {
     const keyIndex = optionKeys.indexOf(key)
     const updatedSpecs = { ...selectedSpecs }
 
-    // Setear valor actual y limpiar lo que viene después
     optionKeys.forEach((k, i) => {
       if (i < keyIndex) return
       if (i === keyIndex) updatedSpecs[k] = value
@@ -114,14 +135,16 @@ const InfoProduct = ({ categoria, selectProduct }) => {
 
         <div className='flex-1 order-2 md:order-1 flex flex-col justify-between shadow-xl rounded-2xl py-4 px-8'>
           <div className='flex flex-col gap-4 py-16 px-8 '>
-            <h1 className='text-4xl font-bold uppercase'>{selectProduct.name}</h1>
-            {selectedVariant ? (
+            <h1 className='text-4xl font-bold uppercase'>
+              {selectProduct.name}
+            </h1>
+            {priceToDisplay ? (
               <p className='text-2xl font-light mb-6 text-black/50'>
-                {selectedVariant.price}
+                {priceToDisplay}
               </p>
             ) : (
-              <p className='text-xl font-light  tracking-tighter text-black p-2 bg-gray-100 rounded mx-auto text-start'>
-                Porfavor termine de selccionar las variantes para mostrarles el
+              <p className='text-xl font-light tracking-tighter text-black p-2 bg-gray-100 rounded mx-auto text-start'>
+                Por favor termine de seleccionar las variantes para mostrar el
                 precio correcto
               </p>
             )}
@@ -154,10 +177,10 @@ const InfoProduct = ({ categoria, selectProduct }) => {
           </div>
 
           <button
-            disabled={!selectedVariant}
+            disabled={!canBuy}
             onClick={handleWhatsAppRedirect}
             className={
-              selectedVariant
+              canBuy
                 ? `self-start px-6 py-4 rounded bg-gray-200 hover:bg-[#1e1e1e] shadow-2xl hover:text-white transition-colors duration-200 cursor-pointer font-semibold text-xl tracking-tight`
                 : `self-start px-6 py-4 rounded bg-gray-200 shadow-2xl cursor-not-allowed font-semibold text-xl tracking-tight`
             }>
