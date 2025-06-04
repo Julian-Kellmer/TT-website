@@ -1,7 +1,7 @@
 'use client'
 import React, { useEffect, useState } from 'react'
-import ProductOptions from '../ components/product-opinions'
-import { ProductTabs } from '../ components/product-tabs'
+import ProductOptions from '../components/product-opinions'
+import { ProductTabs } from '../components/product-tabs'
 import Image from 'next/image'
 import InfoAccordion from './infoAccordion'
 

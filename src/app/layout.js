@@ -1,7 +1,7 @@
 import { Geist, Geist_Mono, Inter } from 'next/font/google'
 import './globals.css'
-import Header from './ components/header'
-import ResponsiveFooter from './ components/responsiveFooter'
+import Header from './components/header'
+import ResponsiveFooter from './components/responsiveFooter'
 const inter = Inter({
   variable: '--font-inter',
   subsets: ['latin'],

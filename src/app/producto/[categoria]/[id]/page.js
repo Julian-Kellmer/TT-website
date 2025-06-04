@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import InfoProduct from '../../../ components/InfoProduct'
+import InfoProduct from '../../../components/InfoProduct'
 import { getProducts } from '../../../lib/getProducts'
 
 export default async function ProductPage({ params }) {

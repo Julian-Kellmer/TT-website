@@ -1,4 +1,4 @@
-import DisplayGrid from '../../ components/Displaygrid'
+import DisplayGrid from '../../components/Displaygrid'
 import { getProducts } from '../../lib/getProducts'
 
 export default async function page({ params }) {
