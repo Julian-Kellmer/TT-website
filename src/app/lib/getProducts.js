@@ -5,7 +5,7 @@ export async function getProducts({ category }) {
   const data = await res.json()
 
   const productos = data.map((item, index) => {
-    let parsedDescSpecs = {}
+    let parsedDescSpecs = []
     let parsedTechSpecs = []
 
     try {
@@ -41,6 +41,7 @@ export async function getProducts({ category }) {
       descSpecs: parsedDescSpecs,
       techSpecs: parsedTechSpecs,
       price: item.price,
+      size: item.size,
       image: item.image?.split(',').map((url) => url.trim()) || [],
     }
   })

@@ -16,7 +16,7 @@ import Link from 'next/link'
 
 const CategoryCarrusel = () => {
   return (
-    <section className='w-full flex flex-col mt-16'>
+    <section id='Categorias' className='w-full flex flex-col mt-16'>
       <h3 className='md:text-[5rem] text-[3rem] tracking-tighter px-4 md:px-16 font-semibold'>
         Categorias
       </h3>

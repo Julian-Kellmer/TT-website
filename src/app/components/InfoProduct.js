@@ -4,6 +4,7 @@ import ProductOptions from '../components/product-opinions'
 import { ProductTabs } from '../components/product-tabs'
 import Image from 'next/image'
 import InfoAccordion from './infoAccordion'
+import Reccommended from './Recommended'
 
 const getPublicDriveUrl = (url) => {
   const match = url.match(/\/d\/([a-zA-Z0-9_-]+)/)
@@ -95,7 +96,7 @@ const InfoProduct = ({ categoria, selectProduct }) => {
     }`
 
     const encodedMessage = encodeURIComponent(message)
-    const whatsappUrl = `https://wa.me/1124040808?text=${encodedMessage}`
+    const whatsappUrl = `https://wa.me/+5491124040808?text=${encodedMessage}`
 
     window.open(whatsappUrl, '_blank')
   }
@@ -111,7 +112,7 @@ const InfoProduct = ({ categoria, selectProduct }) => {
             height={400}
             className='object-contain'
           />
-          <div className='flex gap-2 mt-4'>
+          <div className='flex gap-2 mt-4 md:flex-nowrap flex-wrap'>
             {imageUrls.map((img, index) => (
               <button
                 key={index}
@@ -133,7 +134,7 @@ const InfoProduct = ({ categoria, selectProduct }) => {
           </div>
         </div>
 
-        <div className='flex-1 order-2 md:order-1 flex flex-col justify-between shadow-xl rounded-2xl py-4 px-8'>
+        <div className='flex-1 order-2 md:order-1 flex flex-col justify-between shadow-xl rounded-2xl py-4 pb-8 px-8'>
           <div className='flex flex-col gap-4 py-16 px-8 '>
             <h1 className='text-4xl font-bold uppercase'>
               {selectProduct.name}
@@ -181,7 +182,7 @@ const InfoProduct = ({ categoria, selectProduct }) => {
             onClick={handleWhatsAppRedirect}
             className={
               canBuy
-                ? `self-start px-6 py-4 rounded bg-gray-200 hover:bg-[#1e1e1e] shadow-2xl hover:text-white transition-colors duration-200 cursor-pointer font-semibold text-xl tracking-tight`
+                ? `self-start px-8 py-4 rounded bg-gray-200 hover:bg-[#1e1e1e] shadow-2xl hover:text-white transition-colors duration-200 cursor-pointer font-semibold text-xl tracking-tight`
                 : `self-start px-6 py-4 rounded bg-gray-200 shadow-2xl cursor-not-allowed font-semibold text-xl tracking-tight`
             }>
             Comprar
@@ -198,6 +199,7 @@ const InfoProduct = ({ categoria, selectProduct }) => {
           <ProductTabs descSpecs={selectProduct.descSpecs} />
         </div>
       </div>
+      <Reccommended/>
       <InfoAccordion />
     </div>
   )

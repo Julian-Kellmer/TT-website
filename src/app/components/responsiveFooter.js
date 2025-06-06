@@ -14,7 +14,15 @@ export default function ResponsiveFooter() {
       setOpenSection(section)
     }
   }
+  const handleWhatsAppRedirect = () => {
+    const message =
+      'Hola, estoy interesado en comprarles, ¿podrian asesorarme? '
 
+    const encodedMessage = encodeURIComponent(message)
+    const whatsappUrl = `https://wa.me/+5491124040808?text=${encodedMessage}`
+
+    window.open(whatsappUrl, '_blank')
+  }
   return (
     <footer className='bg-white  py-8 px-4 md:px-6'>
       <div className='container mx-auto'>
@@ -26,7 +34,7 @@ export default function ResponsiveFooter() {
               <p className='font-medium text-lg'>Tengo Tecno</p>
             </div>
             <div className='space-y-2 text-gray-600'>
-              <p>Ventas@tt.com</p>
+              <p>Ventas@tengotecno.com.ar</p>
               <p>O&apos;higgins 1784, CABA</p>
             </div>
           </div>
@@ -48,58 +56,51 @@ export default function ResponsiveFooter() {
               <ul className='space-y-2 text-gray-600 pb-4'>
                 <li>
                   <Link
-                    href='#'
+                    href='/Catalog/macbook'
                     className='hover:underline'>
                     Mackbook Pro
                   </Link>
                 </li>
                 <li>
                   <Link
-                    href='#'
+                    href='/Catalog/macbook'
                     className='hover:underline'>
                     Mackbook air
                   </Link>
                 </li>
                 <li>
                   <Link
-                    href='#'
+                    href='/Catalog/ipad'
                     className='hover:underline'>
-                    iPad
+                    iPad Pro
                   </Link>
                 </li>
                 <li>
                   <Link
-                    href='#'
+                    href='/Catalog/ipad'
                     className='hover:underline'>
-                    iMac
+                    iPad Air
                   </Link>
                 </li>
                 <li>
                   <Link
-                    href='#'
+                    href='/Catalog/notebooks'
                     className='hover:underline'>
-                    Accesorios Apple
+                    NoteBooks
                   </Link>
                 </li>
                 <li>
                   <Link
-                    href='#'
+                    href='/Catalog/notebooks'
                     className='hover:underline'>
-                    Notebooks windows
+                    NoteBooks Gamers
                   </Link>
                 </li>
                 <li>
                   <Link
-                    href='#'
+                    href='/Catalog/parlantes'
                     className='hover:underline'>
-                    Gaming
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href='#'
-                    className='hover:underline'>
-                    Placas gráficas
+                    Parlantes
                   </Link>
                 </li>
               </ul>
@@ -143,11 +144,11 @@ export default function ResponsiveFooter() {
                   </Link>
                 </li>
                 <li>
-                  <Link
-                    href='#'
+                  <button
+                    onClick={handleWhatsAppRedirect}
                     className='hover:underline'>
                     Contacto
-                  </Link>
+                  </button>
                 </li>
               </ul>
             )}
@@ -203,7 +204,7 @@ export default function ResponsiveFooter() {
           {/* Redes sociales */}
           <div className='flex space-x-4 mt-6'>
             <Link
-              href='#'
+              href='https://www.instagram.com/tengotodotecno/'
               className='hover:text-gray-600'>
               <Instagram size={24} />
             </Link>
@@ -224,22 +225,44 @@ export default function ResponsiveFooter() {
               <p className='font-medium text-lg'>Tengo Tecno</p>
             </div>
             <div className='space-y-2 text-gray-600'>
-              <p>Ventas@tt.com</p>
+              <p>Ventas@tengotecno.com.ar</p>
               <p>O&apos;higgins 1784, C1426 CABA, Argentina</p>
             </div>
-            <div className='max-w-xl  text-start mt-12'>
+
+            <div className='max-w-xl text-start mt-12'>
               <h3 className='text-2xl md:text-2xl font-semibold mb-4'>
                 Suscribite a las últimas noticias
               </h3>
-              <form className='flex flex-col  items-start gap-4'>
+
+              {/* Web3Forms Form */}
+              <form
+                action='https://api.web3forms.com/submit'
+                method='POST'
+                className='flex flex-col items-start gap-4'>
+                {/* ACCESS KEY DE WEB3FORMS */}
+                <input
+                  type='hidden'
+                  name='access_key'
+                  value='9c1eb716-aeb4-4b21-b49c-f950be72c061'
+                />
+
+                {/* Redireccionar luego del submit (opcional) */}
+                <input
+                  type='hidden'
+                  name='redirect'
+                  value='https://tengotecno.com.ar/gracias'
+                />
+
                 <input
                   type='email'
+                  name='email'
                   placeholder='Ingresá tu correo electrónico'
+                  required
                   className='w-full sm:flex-1 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500'
                 />
                 <button
                   type='submit'
-                  className='px-6 py-2 bg-black text-white rounded-md hover:bg-gray-300 hover:text-black duration-75 ease-in  transition'>
+                  className='px-6 py-2 bg-black text-white rounded-md hover:bg-gray-300 hover:text-black transition duration-75 ease-in'>
                   Suscribirme
                 </button>
               </form>
@@ -252,58 +275,51 @@ export default function ResponsiveFooter() {
             <ul className='space-y-2 text-gray-600'>
               <li>
                 <Link
-                  href='#'
+                  href='/Catalog/macbook'
                   className='hover:underline'>
                   Mackbook Pro
                 </Link>
               </li>
               <li>
                 <Link
-                  href='#'
+                  href='/Catalog/macbook'
                   className='hover:underline'>
                   Mackbook air
                 </Link>
               </li>
               <li>
                 <Link
-                  href='#'
+                  href='/Catalog/ipad'
                   className='hover:underline'>
-                  iPad
+                  iPad Pro
                 </Link>
               </li>
               <li>
                 <Link
-                  href='#'
+                  href='/Catalog/ipad'
                   className='hover:underline'>
-                  iMac
+                  Ipad Air
                 </Link>
               </li>
               <li>
                 <Link
-                  href='#'
+                  href='/Catalog/notebook'
                   className='hover:underline'>
-                  Accesorios Apple
+                  Notebook
                 </Link>
               </li>
               <li>
                 <Link
-                  href='#'
+                  href='/Catalog/notebook'
                   className='hover:underline'>
-                  Notebooks windows
+                  Notebooks Gamer
                 </Link>
               </li>
               <li>
                 <Link
-                  href='#'
+                  href='/Catalog/parlantes'
                   className='hover:underline'>
-                  Gaming
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href='#'
-                  className='hover:underline'>
-                  Placas gráficas
+                  Parlantes
                 </Link>
               </li>
             </ul>
@@ -314,32 +330,11 @@ export default function ResponsiveFooter() {
             <h3 className='font-medium text-lg mb-4'>Institucional</h3>
             <ul className='space-y-2 text-gray-600'>
               <li>
-                <Link
-                  href='#'
-                  className='hover:underline'>
-                  Términos y condiciones
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href='#'
-                  className='hover:underline'>
-                  Ventas mayoristas
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href='#'
-                  className='hover:underline'>
-                  Políticas
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href='#'
+                <button
+                  onClick={handleWhatsAppRedirect}
                   className='hover:underline'>
                   Contacto
-                </Link>
+                </button>
               </li>
             </ul>
           </div>
@@ -347,49 +342,37 @@ export default function ResponsiveFooter() {
           {/* Columna 4: Nosotros y redes sociales */}
           <div className='flex flex-col justify-between'>
             <div>
-              <h3 className='font-medium text-lg mb-4'>Nosotros</h3>
+              <h3 className='font-medium text-lg mb-4'>Secciones</h3>
               <ul className='space-y-2 text-gray-600'>
                 <li>
-                  <Link
-                    href='#'
+                  <a
+                    href='#Categorias'
+                    className='hover:underline'>
+                    Categorias
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href='#masVendidos'
+                    className='hover:underline'>
+                    Más vendidos
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href='#Testimonios'
                     className='hover:underline'>
                     Testimonios
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href='#'
-                    className='hover:underline'>
-                    Nosotros
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href='#'
-                    className='hover:underline'>
-                    Equipo
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href='#'
-                    className='hover:underline'>
-                    Comunidad
-                  </Link>
+                  </a>
                 </li>
               </ul>
             </div>
             <div className='flex space-x-4 mt-6'>
-              <Link
-                href='#'
+              <a
+                href='https://www.instagram.com/tengotodotecno/'
                 className='hover:text-gray-600'>
                 <Instagram size={24} />
-              </Link>
-              <Link
-                href='#'
-                className='hover:text-gray-600'>
-                <Linkedin size={24} />
-              </Link>
+              </a>
             </div>
           </div>
         </div>

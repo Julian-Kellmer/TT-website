@@ -5,29 +5,37 @@ import { useState, useEffect, useRef } from 'react'
 import { Catalog } from '../../mockdata/mockdata'
 import CategoryItem from './categoryItem'
 import { gsap } from 'gsap'
+import { usePathname } from 'next/navigation'
 
 const Header = () => {
   const [isCatalogOpen, setIsCatalogOpen] = useState(false)
   const [showCatalog, setShowCatalog] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [isMobileCatalog, setIsMobileCatalog] = useState(false)
-
+  const [scrolled, setScrolled] = useState(false)
   const categoryRef = useRef(null)
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 10)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  const pathname =usePathname()
+  const isHome=pathname==='/'
 
   const handleCatalogClick = () => {
     if (!isCatalogOpen) setShowCatalog(true)
     setIsCatalogOpen((prev) => !prev)
   }
   const handleWhatsAppRedirect = () => {
-    const specSummary = Object.entries(selectedSpecs)
-      .map(([key, val]) => `${key}: ${val}`)
-      .join(', ')
-
     const message =
       'Hola, estoy interesado en comprarles, ¿podrian asesorarme? '
 
     const encodedMessage = encodeURIComponent(message)
-    const whatsappUrl = `https://wa.me/1124040808?text=${encodedMessage}`
+    const whatsappUrl = `https://wa.me/+5491124040808?text=${encodedMessage}`
 
     window.open(whatsappUrl, '_blank')
   }
@@ -51,10 +59,13 @@ const Header = () => {
   }, [isCatalogOpen])
 
   return (
-    <header className='fixed top-0 left-0 w-full z-50 px-4 md:px-0 py-2 md:py-12 \'>
+    <header
+  className={`fixed top-0 left-0 w-full z-50 px-4 md:px-32 py-2 ${
+    isHome ? (scrolled ? 'md:py-2' : 'md:py-10') : 'md:py-2'
+  } transition-all duration-300`}>
       {/* NAV DESKTOP */}
       <nav
-        className={`hidden lg:flex items-center justify-between px-16 py-4 bg-[#eaeaea] rounded`}>
+        className={`hidden lg:flex items-center justify-between px-16 py-2 bg-[#eaeaea] rounded`}>
         <Link href='/'>
           <Image
             src='/images/TT.svg'
@@ -64,11 +75,11 @@ const Header = () => {
           />
         </Link>
         <div className='flex gap-8'>
-          <Link
+          {/* <Link
             href='/aboutUs'
             className='hover:text-white hover:bg-black px-3 py-2 rounded'>
             Sobre Nosotros
-          </Link>
+          </Link> */}
           <button
             onClick={handleCatalogClick}
             className='hover:text-white hover:bg-black px-3 py-2 rounded'>
@@ -88,7 +99,7 @@ const Header = () => {
       </nav>
 
       {/* NAV MOBILE */}
-      <nav className='lg:hidden rounded-xl flex items-center justify-between px-6 py-4 bg-[#eaeaea]'>
+      <nav className='lg:hidden rounded-xl flex items-center justify-between px-6 py-2 bg-[#eaeaea]'>
         <Link href='/'>
           <Image
             src='/images/TT.svg'
@@ -171,6 +182,8 @@ const Header = () => {
                 nombre={item.titulo}
                 isCatalogOpen={isCatalogOpen}
                 setIsCatalogOpen={setIsCatalogOpen}
+                setIsMobileCatalog={setIsMobileCatalog}
+                setIsMobileMenuOpen={setIsMobileMenuOpen}
               />
             ))}
           </div>
@@ -191,7 +204,7 @@ const Header = () => {
         {showCatalog && (
           <div
             ref={categoryRef}
-            className='absolute z-50 top-12 left-1/2 -translate-x-1/2 w-[90vw] max-h-[60vh] overflow-y-auto bg-[#1e1e1e] rounded-3xl p-4 flex flex-wrap justify-center gap-4'>
+            className='absolute z-50 top-12 left-1/2 -translate-x-1/2 w-[90vw] max-h-[60vh] overflow-y-auto bg-[#1e1e1e] rounded-3xl p-4 flex flex-wrap justify-center gap-4 capitalize'>
             {Catalog.map((item, index) => (
               <CategoryItem
                 key={index}

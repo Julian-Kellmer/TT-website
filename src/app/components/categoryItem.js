@@ -3,11 +3,20 @@ import React from 'react'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 
-const CategoryItem = ({ img, nombre, isCatalogOpen, setIsCatalogOpen }) => {
+const CategoryItem = ({
+  img,
+  nombre,
+  isCatalogOpen,
+  setIsCatalogOpen,
+  setIsMobileCatalog,
+  setIsMobileMenuOpen
+}) => {
   const router = useRouter()
 
   const handleClick = () => {
     setIsCatalogOpen(false)
+    setIsMobileMenuOpen(false)
+    setIsMobileCatalog(false)
     setTimeout(() => {
       router.push(`/Catalog/${nombre}`)
     }, 500)
@@ -16,8 +25,7 @@ const CategoryItem = ({ img, nombre, isCatalogOpen, setIsCatalogOpen }) => {
   return (
     <div
       onClick={handleClick}
-      className='relative flex flex-col items-center justify-end w-[280px] h-[200px] cursor-pointer'
-    >
+      className='relative flex flex-col items-center justify-end w-[280px] h-[200px] cursor-pointer'>
       {/* Imagen contenida y centrada */}
       <div className='absolute top-0 left-0 w-full h-[140px] flex items-center justify-center'>
         <Image

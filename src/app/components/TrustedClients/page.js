@@ -63,7 +63,7 @@ export default function StackedSuccessCases() {
   const activeCase = successCases.find((item) => item.id === activeId)
 
   return (
-    <div className='w-full mx-auto md:px-16 px-4 py-12 bg-white border-blue-100 rounded-lg md:mt-32 mt-8 '>
+    <section id='Testimonios' className='w-full mx-auto md:px-16 px-4 py-12 bg-white border-blue-100 rounded-lg md:mt-32 mt-8 '>
       <h2 className='text-[3rem] md:text-[4.8rem] font-semibold tracking-tighter text-center mb-10'>
         Casos de Éxito.
       </h2>
@@ -137,6 +137,6 @@ export default function StackedSuccessCases() {
           />
         </div>
       </div>
-    </div>
+    </section>
   )
 }

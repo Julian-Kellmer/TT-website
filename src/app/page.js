@@ -29,10 +29,10 @@ const page = () => {
     <div className='w-full relative flex flex-col '>
       <Banner />
       <AutoCarousel images={carouselImages} />
-      <CategoryCarrusel />
-      <TtNumbers />
+      <CategoryCarrusel id='Categorias'/>
+      {/* <TtNumbers /> */}
       <MostValuedProducts />
-      <TrustedClients />
+      <TrustedClients id='Testimonios'/>
       <OurServices />
     </div>
   )

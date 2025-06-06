@@ -14,7 +14,7 @@ export default async function ProductPage({ params }) {
       id
     )
     return (
-      <div className='container mx-auto px-4 py-8 mt-[15vh]'>
+      <div className='container mx-auto px-4 py-8 mt-16'>
         <h1 className='text-2xl font-bold text-center text-red-600'>
           producto no encontrado
         </h1>

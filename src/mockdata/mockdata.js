@@ -91,25 +91,13 @@ export const macbookObjeto = {
   titulo: 'macbook',
   filtros: {
     type: ['PRO', 'AIR'],
-    chip: [
-      'M1',
-      'M2',
-      'M3',
-      'M4',
-      'M4_PRO_&_MAX',
-      'M2_PRO',
-      'M3_PRO_&_MAX',
-      
-    ],
-    size: ['13,3', '13,6', '15,3', '16,2', '14,2'],
-
-    ram: [RAM_8GB, RAM_16GB, RAM_32GB, RAM_64GB],
+    chip: ['M1', 'M2', 'M3', 'M4', 'M4_PRO_&_MAX', 'M2_PRO', 'M3_PRO_&_MAX'],
     size: [
-      '13_PULGADAS',
-      '14_PULGADAS',
-      '15_PULGADAS',
-      '16_PULGADAS',
-      '17_PULGADAS',
+      '13,3_PULGADAS',
+      '13,6_PULGADAS',
+      '14,2_PULGADAS',
+      '15,3_PULGADAS',
+      '16,3_PULGADAS',
     ],
   },
   productos: macbooksProductos,
@@ -118,12 +106,7 @@ export const parlanteObjeto = {
   img: '/images/categorias/parlante.png',
   titulo: 'parlantes',
   filtros: {
-    type: [
-      TYPE_BARRAS_DE_SONIDO,
-      TYPE_PORTATILES,
-      TYPE_SUB_WOOFERS,
-      TYPE_SISTEMAS_DE_AUDIO,
-    ],
+    type: ['BARRAS_DE_SONIDO', 'PORTATILES', 'SUB_WOOFER', 'SISTEMAS_DE_AUDIO'],
     brand: [BRAND_JBL, BRAND_SONOS],
   },
   productos: parlantesProductos,
@@ -172,14 +155,6 @@ export const notebookObjeto = {
       'SNAPDRAGON_PLUS',
       'SNAPDRAGON_ELITE',
     ],
-    size: [
-      '13_PULGADAS',
-      '14_PULGADAS',
-      '15_PULGADAS',
-      '16_PULGADAS',
-      '17_PULGADAS',
-      '18_PULGADAS',
-    ],
   },
   productos: notebookProductos,
 }
@@ -197,7 +172,7 @@ export const macObjeto = {
   img: '/images/categorias/Mac-Mini.png',
   titulo: 'mac',
   filtros: {
-    type: [TYPE_STUDIO_DISPLAY, TYPE_IMAC, TYPE_MAC_STUDIO, TYPE_MAC_MINI],
+    type: ['STUDIO_DISPLAY', TYPE_IMAC, TYPE_MAC_STUDIO, TYPE_MAC_MINI],
     chip: [CHIP_M4_PRO, CHIP_M3, CHIP_M4],
   },
   productos: macProductos,

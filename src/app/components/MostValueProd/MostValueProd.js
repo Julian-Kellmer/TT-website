@@ -26,7 +26,9 @@ export default function MostValueProd() {
   }, [])
 
   return (
-    <div className='overflow-hidden w-full flex flex-col md:gap-32 md:mt-48'>
+    <div
+      id='masVendidos'
+      className='overflow-hidden w-full flex flex-col md:gap-32 md:mt-48'>
       <section className='flex flex-col md:gap-16'>
         <h3 className='md:px-16 text-[2rem] px-4 md:text-[4rem] tracking-tighter font-semibold'>
           Más Vendidos

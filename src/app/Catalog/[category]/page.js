@@ -6,7 +6,7 @@ export default async function page({ params }) {
   const Products = await getProducts({ category })
   // console.log(Products)
   return (
-    <main className='container mx-auto px-4 py-8 mt-[15vh] mb-64'>
+    <main className='container mx-auto px-4 py-8 mb-64 mt-16'>
       <h1 className='text-[4rem] font-bold mb-6 text-center uppercase'>
         {category}
       </h1>
