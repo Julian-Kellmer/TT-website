@@ -14,12 +14,12 @@ const WhatsapFloat = () => {
     window.open(whatsappUrl, '_blank')
   }
   return (
-    <div className='z-500 h-16 w-24 fixed bottom-4 right-4 rounded-4xl '>
+    <div className='z-500 h-16 w-16 fixed bottom-4 right-4 rounded-4xl '>
       <Image
         alt='whatsap'
         src={'/images/whatsap.jpg'}
         fill={true}
-        className='object-cover hover:scale-110 transition-all duration-300'
+        className='object-contain hover:scale-110 transition-all duration-300'
         onClick={handleWhatsAppRedirect}
       />
     </div>
