@@ -187,7 +187,7 @@ export const consolasObjeto = {
 
 export const relojesObjeto = {
   img: '/images/categorias/apple-watch.png',
-  titulo: 'applewatch',
+  titulo: 'appleWatch',
   filtros: { type: [TYPE_WATCH_SE, TYPE_WATCH_SERIE_10, TYPE_WATCH_ULTRA] },
   productos: relojesProductos,
 }

@@ -139,7 +139,12 @@ const Displaygrid = ({ category, products }) => {
                   </div>
 
                   <div className='w-full mt-4 text-center '>
-                    <Badge className='mb-2 capitalize'>{product.brand}</Badge>
+                    {category === 'macbook' ? (
+                      ''
+                    ) : (
+                      <Badge className='mb-2 capitalize'>{product.brand}</Badge>
+                    )}
+
                     <h3 className='text-lg font-medium'>{product.name}</h3>
                     <div className='flex text-center justify-center gap-2  mt-2'>
                       <p className='text-gray-600 text-xl '>Desde</p>

@@ -17,7 +17,7 @@ const WhatsapFloat = () => {
     <div className='z-500 h-16 w-16 fixed bottom-4 right-4 rounded-4xl '>
       <Image
         alt='whatsap'
-        src={'/images/whatsap.jpg'}
+        src={'/images/whatsapp.svg'}
         fill={true}
         className='object-contain hover:scale-110 transition-all duration-300'
         onClick={handleWhatsAppRedirect}

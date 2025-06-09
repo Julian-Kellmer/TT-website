@@ -15,8 +15,13 @@ const CategoryItem = ({
 
   const handleClick = () => {
     setIsCatalogOpen(false)
-    setIsMobileMenuOpen(false)
-    setIsMobileCatalog(false)
+
+    // Verifica si es mobile antes de ejecutar las funciones correspondientes
+    if (typeof window !== 'undefined' && window.innerWidth < 768) {
+      setIsMobileCatalog(false)
+      setIsMobileMenuOpen(false)
+    }
+
     setTimeout(() => {
       router.push(`/Catalog/${nombre}`)
     }, 500)

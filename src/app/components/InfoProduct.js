@@ -195,9 +195,9 @@ const InfoProduct = ({ categoria, selectProduct }) => {
           <h2 className='text-2xl font-bold mb-4'>Descripción</h2>
           <p className='text-gray-700'>{selectProduct.desc}</p>
         </div>
-        <div className='rounded-lg flex flex-col gap-4 justify-between'>
+        {/* <div className='rounded-lg flex flex-col gap-4 justify-between'>
           <ProductTabs descSpecs={selectProduct.descSpecs} />
-        </div>
+        </div> */}
       </div>
       <Reccommended/>
       <InfoAccordion />

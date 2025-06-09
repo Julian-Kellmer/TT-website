@@ -42,6 +42,8 @@ export async function getProducts({ category }) {
       techSpecs: parsedTechSpecs,
       price: item.price,
       size: item.size,
+      ram: item.ram,
+      storage: item.storage,
       image: item.image?.split(',').map((url) => url.trim()) || [],
     }
   })
