@@ -149,7 +149,7 @@ const InfoProduct = ({ categoria, selectProduct }) => {
                 precio correcto
               </p>
             )}
-            <div className='border-t border-gray-200 pt-6'>
+            <div className='border-t border-gray-200 pt-6  gap-4'>
               {optionKeys.map((key, i) => (
                 <div
                   key={key}

@@ -8,52 +8,52 @@ const successCases = [
     id: 'lamborghini',
     title: 'Lamborghini',
     description:
-      'Comprar mi computadora en Tengo Tecno fue una experiencia simplemente asombrosa. Desde el primer momento, la atención que recibí fue personalizada, cordial y muy profesional, ayudándome a encontrar exactamente lo que necesitaba.',
+      'Comprar mi computadora en Tengo Tecno fue una experiencia simplemente asombrosa. Desde el primer momento, la atención que recibí fue personalizada, cordial y muy profesional, ayudándome a encontrar exactamente lo que necesitaba para gestionar los desarrollos de producto con máxima eficiencia',
     logo: '/images/trustedUs/LAMBO.png',
-    clientName: 'Karina Rodriguez',
+    clientName: 'Milena Soria',
     clientTitleReview: 'Servicio increíble, rápido y confiable',
     clientReview:
-      'Comprar mi computadora en Tengo Tecno fue una experiencia simplemente asombrosa. Desde el primer momento, la atención que recibí fue personalizada, cordial y muy profesional, ayudándome a encontrar exactamente lo que necesitaba.',
-    clientRole: 'Product Manager',
+      'Comprar mi computadora en Tengo Tecno fue una experiencia simplemente asombrosa. Desde el primer momento, la atención que recibí fue personalizada, cordial y muy profesional, ayudándome a encontrar exactamente lo que necesitaba para gestionar los desarrollos de producto con máxima eficiencia',
+    clientRole: 'Product Manager • Lamborghini Argentina',
     clientPhoto: '/images/trustedUs/employer1.jpg',
   },
   {
     id: 'dypsa',
     title: 'Dypsa',
     description:
-      'Nuestra experiencia con Tengo Tecno fue excelente. Nos ofrecieron asesoramiento profesional desde el inicio, logrando una solución ideal para nuestras necesidades tecnológicas.Nuestra experiencia con Tengo Tecno fue excelente. Nos ofrecieron asesoramiento profesional desde el inicio, logrando una solución ideal para nuestras necesidades tecnológicas.',
+      'Nuestra experiencia con Tengo Tecno fue excelente. Nos ofrecieron asesoramiento profesional desde el inicio, logrando una solución ideal para nuestras necesidades tecnológicas. Todo el proceso de compra fue claro, rápido y eficiente, facilitando la toma de decisiones en nuestro departamento',
     logo: '/images/trustedUs/DYPSANegra.png',
-    clientName: 'Luis Fernández',
+    clientName: 'Bruno Larralde',
     clientTitleReview: 'Atención impecable y soluciones efectivas',
     clientReview:
-      'Nuestra experiencia con Tengo Tecno fue excelente. Nos ofrecieron asesoramiento profesional desde el inicio, logrando una solución ideal para nuestras necesidades tecnológicas.Nuestra experiencia con Tengo Tecno fue excelente. Nos ofrecieron asesoramiento profesional desde el inicio, logrando una solución ideal para nuestras necesidades tecnológicas.',
-    clientRole: 'Gerente de Compras',
+      'Nuestra experiencia con Tengo Tecno fue excelente. Nos ofrecieron asesoramiento profesional desde el inicio, logrando una solución ideal para nuestras necesidades tecnológicas. Todo el proceso de compra fue claro, rápido y eficiente, facilitando la toma de decisiones en nuestro departamento',
+    clientRole: 'Gerente de Compras • Dypsa',
     clientPhoto: '/images/trustedUs/employer2.jpg',
   },
   {
     id: 'mundo-juguete',
     title: 'Mundo Juguete',
     description:
-      'Confiamos en Tengo Tecno para equipar nuestras oficinas, y superaron nuestras expectativas. Todo llegó en tiempo y forma, y el soporte postventa fue clave.',
+      'Necesitábamos renovar gran parte del equipamiento del equipo técnico. En Tengo Tecno no solo entendieron lo que buscábamos, sino que nos recomendaron opciones que optimizaron el rendimiento sin salirnos del presupuesto. Un proveedor que habla nuestro mismo lenguaje técnico',
     logo: '/images/trustedUs/EMDJ.png',
-    clientName: 'Cristian Núñez',
+    clientName: 'Franco Salvatierra',
     clientTitleReview: 'Un servicio que marca la diferencia',
     clientReview:
-      'Confiamos en Tengo Tecno para equipar nuestras oficinas, y superaron nuestras expectativas. Todo llegó en tiempo y forma, y el soporte postventa fue clave.',
-    clientRole: 'Directora Comercial',
+      'Necesitábamos renovar gran parte del equipamiento del equipo técnico. En Tengo Tecno no solo entendieron lo que buscábamos, sino que nos recomendaron opciones que optimizaron el rendimiento sin salirnos del presupuesto. Un proveedor que habla nuestro mismo lenguaje técnico',
+    clientRole: 'Gerente de Sistemas • El Mundo del Juguete',
     clientPhoto: '/images/trustedUs/employer3.jpg',
   },
   {
     id: 'ditoys',
     title: 'Ditoys',
     description:
-      'Elegimos Tengo Tecno para la renovación tecnológica de nuestra empresa. La experiencia fue profesional, ágil y con una atención destacable en cada paso.',
+      'Como responsable de la operación general, valoro los proveedores que entienden lo que significa el tiempo y la confiabilidad. Tengo Tecno cumplió en cada etapa: desde el asesoramiento hasta la entrega puntual, permitiéndonos enfocarnos en lo estratégico sin preocuparnos por lo operativo',
     logo: '/images/trustedUs/DITOYS.png',
-    clientName: 'Martín Pereyra',
+    clientName: 'Catalina Bustos',
     clientTitleReview: 'Profesionales de principio a fin',
     clientReview:
-      'Elegimos Tengo Tecno para la renovación tecnológica de nuestra empresa. La experiencia fue profesional, ágil y con una atención destacable en cada paso.',
-    clientRole: 'CTO',
+      'Como responsable de la operación general, valoro los proveedores que entienden lo que significa el tiempo y la confiabilidad. Tengo Tecno cumplió en cada etapa: desde el asesoramiento hasta la entrega puntual, permitiéndonos enfocarnos en lo estratégico sin preocuparnos por lo operativo',
+    clientRole: 'Gerenta General • Ditoys',
     clientPhoto: '/images/trustedUs/employer4.jpg',
   },
 ]
@@ -63,7 +63,9 @@ export default function StackedSuccessCases() {
   const activeCase = successCases.find((item) => item.id === activeId)
 
   return (
-    <section id='Testimonios' className='w-full mx-auto md:px-16 px-4 py-12 bg-white border-blue-100 rounded-lg md:mt-32 mt-8 '>
+    <section
+      id='Testimonios'
+      className='w-full mx-auto md:px-16 px-4 py-12 bg-white border-blue-100 rounded-lg md:mt-32 mt-8 '>
       <h2 className='text-[3rem] md:text-[4.8rem] font-semibold tracking-tighter text-center mb-10'>
         Casos de Éxito.
       </h2>
@@ -106,7 +108,7 @@ export default function StackedSuccessCases() {
               “{activeCase.clientReview}”
             </p>
           </div>
-          <div className=' flex lg:self-end gap-3 my-4 '>
+          <div className=' flex lg:self-start gap-3 my-4 '>
             <div className='w-16 h-auto'>
               <Image
                 src={activeCase.logo}
@@ -127,13 +129,13 @@ export default function StackedSuccessCases() {
           </div>
         </div>
 
-        <div className='flex  flex-1  w-full md:justify-end justify-center '>
+        <div className='flex  w-full md:justify-center justify-center '>
           <Image
-            src={activeCase.clientPhoto}
+            src={activeCase.logo}
             alt={activeCase.clientName}
             width={400}
             height={500}
-            className='rounded-lg object-cover'
+            className='rounded-lg object-contain'
           />
         </div>
       </div>

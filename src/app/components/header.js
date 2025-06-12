@@ -137,14 +137,14 @@ const Header = () => {
             ✕
           </button>
           <ul className='flex flex-col gap-16 justify-start  '>
-            <li>
+            {/* <li>
               <Link
                 href='/aboutUs'
                 onClick={() => setIsMobileMenuOpen(false)}
                 className='text-white font-semibold tracking-tighter text-6xl'>
                 Sobre Nosotros
               </Link>
-            </li>
+            </li> */}
             <li>
               <button
                 onClick={() => {
@@ -174,7 +174,7 @@ const Header = () => {
             className='text-left text-white text-3xl tracking-tighter mb-4'>
             ← Volver
           </button>
-          <div className='flex flex-wrap justify-center gap-4'>
+          <div className='flex flex-wrap justify-center gap-4 capitalize'>
             {Catalog.map((item, index) => (
               <CategoryItem
                 key={index}

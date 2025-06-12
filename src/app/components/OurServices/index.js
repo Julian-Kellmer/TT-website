@@ -8,14 +8,14 @@ const index = () => {
       desc: 'Disfrutá de hasta 12 meses de garantía oficial en todos nuestros productos. Tu compra está protegida ante cualquier falla de fábrica, con soporte técnico y atención inmediata.',
     },
     {
-      title: 'Servicio técnico',
+      title: 'Asesoramiento personalizado',
       icon: '/images/technical.svg',
-      desc: 'Contamos con un equipo especializado para brindarte soporte técnico certificado. Realizamos diagnóstico, reparación y mantenimiento con repuestos originales y atención personalizada.',
+      desc: 'Nuestro equipo está listo para ayudarte a elegir el producto ideal según tus necesidades. Te brindamos atención personalizada, resolvemos tus dudas y te acompañamos en cada paso de la compra.',
     },
     {
       title: 'Pick-up',
       icon: '/images/pickup.svg',
-      desc: 'Retirá tu compra en nuestras sucursales de forma rápida y sin costo adicional. Te avisamos cuando esté lista para que la retires en el horario que prefieras.',
+      desc: 'Retirá tu compra en nuestras oficinas de forma rápida y sin costo adicional. Te avisamos cuando esté lista para que la retires en el horario que prefieras',
     },
     {
       title: 'Envíos a todo el país',

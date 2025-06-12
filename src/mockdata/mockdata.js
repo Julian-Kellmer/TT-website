@@ -88,7 +88,7 @@ import {
 
 export const macbookObjeto = {
   img: '/images/categorias/macbook.png',
-  titulo: 'macbook',
+  titulo: 'macBook',
   filtros: {
     type: ['PRO', 'AIR'],
     chip: ['M1', 'M2', 'M3', 'M4', 'M4_PRO_&_MAX', 'M2_PRO', 'M3_PRO_&_MAX'],
@@ -170,7 +170,7 @@ export const ipadObjeto = {
 }
 export const macObjeto = {
   img: '/images/categorias/Mac-Mini.png',
-  titulo: 'mac',
+  titulo: 'macs',
   filtros: {
     type: ['STUDIO_DISPLAY', TYPE_IMAC, TYPE_MAC_STUDIO, TYPE_MAC_MINI],
     chip: [CHIP_M4_PRO, CHIP_M3, CHIP_M4],
@@ -212,7 +212,7 @@ export const accesoriosObjeto = {
 
 export const airpodsObjeto = {
   img: '/images/categorias/airpods.png',
-  titulo: 'airpods',
+  titulo: 'airPods',
   filtros: { type: [TYPE_4GEN, TYPE_PRO2, TYPE_MAX] },
   productos: airpodsProductos,
 }

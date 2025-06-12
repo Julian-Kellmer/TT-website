@@ -38,7 +38,44 @@ export default function ResponsiveFooter() {
               <p>O&apos;higgins 1784, CABA</p>
             </div>
           </div>
+          <div className='max-w-xl text-start mt-12'>
+            <h3 className='text-2xl md:text-2xl font-semibold mb-4'>
+              Suscribite a las últimas noticias
+            </h3>
 
+            {/* Web3Forms Form */}
+            <form
+              action='https://api.web3forms.com/submit'
+              method='POST'
+              className='flex flex-col items-start gap-4'>
+              {/* ACCESS KEY DE WEB3FORMS */}
+              <input
+                type='hidden'
+                name='access_key'
+                value='9c1eb716-aeb4-4b21-b49c-f950be72c061'
+              />
+
+              {/* Redireccionar luego del submit (opcional) */}
+              {/* <input
+                  type='hidden'
+                  name='redirect'
+                  value='https://tengotecno.com.ar/gracias'
+                /> */}
+
+              <input
+                type='email'
+                name='email'
+                placeholder='Ingresá tu correo electrónico'
+                required
+                className='w-full sm:flex-1 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500'
+              />
+              <button
+                type='submit'
+                className='px-6 py-2 bg-black text-white rounded-md hover:bg-gray-300 hover:text-black transition duration-75 ease-in'>
+                Suscribirme
+              </button>
+            </form>
+          </div>
           {/* Acordeón para Productos */}
           <div className='border-b'>
             <button
@@ -247,11 +284,11 @@ export default function ResponsiveFooter() {
                 />
 
                 {/* Redireccionar luego del submit (opcional) */}
-                <input
+                {/* <input
                   type='hidden'
                   name='redirect'
                   value='https://tengotecno.com.ar/gracias'
-                />
+                /> */}
 
                 <input
                   type='email'

@@ -8,11 +8,11 @@ import TrustedClients from './components/TrustedClients/page'
 import OurServices from './components/OurServices'
 const carouselImages = [
   {
-    src: '/images/banners/PruebaBanner2.jpg',
+    src: '/images/banners/banner1.jpg',
     alt: 'Eleva tu experiencia. Descubre lo mejor en tecnología.',
   },
   {
-    src: '/images/banners/BannerNotebooks.jpg',
+    src: '/images/banners/PruebaBanner2.jpg',
     alt: 'Productos de última generación',
   },
   {
