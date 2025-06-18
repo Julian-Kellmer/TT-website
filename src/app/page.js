@@ -8,19 +8,15 @@ import TrustedClients from './components/TrustedClients/page'
 import OurServices from './components/OurServices'
 const carouselImages = [
   {
-    src: '/images/banners/banner1.jpg',
+    src: '/images/banners/Banners2-01.jpg',
     alt: 'Eleva tu experiencia. Descubre lo mejor en tecnología.',
   },
   {
-    src: '/images/banners/PruebaBanner2.jpg',
+    src: '/images/banners/Banners3-01.jpg',
     alt: 'Productos de última generación',
   },
   {
-    src: '/images/banners/BannerMac.jpg',
-    alt: 'Garantía extendida en todos nuestros productos',
-  },
-  {
-    src: '/images/banners/pruebafinal.jpg',
+    src: '/images/banners/Banners-01.jpg',
     alt: 'Garantía extendida en todos nuestros productos',
   },
 ]
@@ -29,10 +25,10 @@ const page = () => {
     <div className='w-full relative flex flex-col '>
       <Banner />
       <AutoCarousel images={carouselImages} />
-      <CategoryCarrusel id='Categorias'/>
+      <CategoryCarrusel id='Categorias' />
       {/* <TtNumbers /> */}
       <MostValuedProducts />
-      <TrustedClients id='Testimonios'/>
+      <TrustedClients id='Testimonios' />
       <OurServices />
     </div>
   )

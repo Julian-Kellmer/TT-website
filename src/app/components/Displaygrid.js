@@ -139,7 +139,7 @@ const Displaygrid = ({ category, products }) => {
                   </div>
 
                   <div className='w-full mt-4 text-center '>
-                    {category === 'macbook' ? (
+                    {category === 'macBook' ? (
                       ''
                     ) : (
                       <Badge className='mb-2 capitalize'>{product.brand}</Badge>

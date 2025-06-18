@@ -8,7 +8,7 @@ const index = () => {
       desc: 'Disfrutá de hasta 12 meses de garantía oficial en todos nuestros productos. Tu compra está protegida ante cualquier falla de fábrica, con soporte técnico y atención inmediata.',
     },
     {
-      title: 'Asesoramiento personalizado',
+      title: 'Asesoramiento Personalizado',
       icon: '/images/technical.svg',
       desc: 'Nuestro equipo está listo para ayudarte a elegir el producto ideal según tus necesidades. Te brindamos atención personalizada, resolvemos tus dudas y te acompañamos en cada paso de la compra.',
     },

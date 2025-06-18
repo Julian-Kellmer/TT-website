@@ -34,8 +34,16 @@ export default function ResponsiveFooter() {
               <p className='font-medium text-lg'>Tengo Tecno</p>
             </div>
             <div className='space-y-2 text-gray-600'>
-              <p>Ventas@tengotecno.com.ar</p>
-              <p>O&apos;higgins 1784, CABA</p>
+              <a
+                href='mailto:Ventas@tengotecno.com.ar'
+                target='_blank'>
+                Ventas@tengotecno.com.ar
+              </a>
+              <a
+                href='https://maps.app.goo.gl/DVmF2pDqMK4C5ZmW9'
+                target='_blank'>
+                O&apos;higgins 1784, CABA
+              </a>
             </div>
           </div>
           <div className='max-w-xl text-start mt-12'>
@@ -262,8 +270,16 @@ export default function ResponsiveFooter() {
               <p className='font-medium text-lg'>Tengo Tecno</p>
             </div>
             <div className='space-y-2 text-gray-600'>
-              <p>Ventas@tengotecno.com.ar</p>
-              <p>O&apos;higgins 1784, C1426 CABA, Argentina</p>
+              <a
+                href='mailto:Ventas@tengotecno.com.ar'
+                target='_blank'>
+                Ventas@tengotecno.com.ar
+              </a>
+              <a
+                href='https://maps.app.goo.gl/DVmF2pDqMK4C5ZmW9'
+                target='_blank'>
+                O&apos;higgins 1784, CABA
+              </a>
             </div>
 
             <div className='max-w-xl text-start mt-12'>

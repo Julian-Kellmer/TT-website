@@ -11,16 +11,16 @@ const Banner = () => {
           <span>Todos nuestros producto son originales</span>{' '}
         </li>
         <li>
-          <span>Garantia 24/4</span>{' '}
+          <span>Garantia Oficial</span>{' '}
         </li>
         <li>
           <span>Soporte 24/7</span>{' '}
         </li>
         <li>
-          <span>Todos nuestros producto son originales</span>{' '}
+          <span>Todos Nuestros Producto Son Originales</span>{' '}
         </li>
         <li>
-          <span>Garantia 24/4</span>{' '}
+          <span>Garantia Oficial</span>{' '}
         </li>
       </ul>
       <ul

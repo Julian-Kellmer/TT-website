@@ -65,34 +65,34 @@ export default function StackedSuccessCases() {
   return (
     <section
       id='Testimonios'
-      className='w-full mx-auto md:px-16 px-4 py-12 bg-white border-blue-100 rounded-lg md:mt-32 mt-8 '>
+      className='w-full mx-auto md:px-16 px-4 py-12 bg-white border-blue-100 rounded-lg md:mt-32 mt-8 container'>
       <h2 className='text-[3rem] md:text-[4.8rem] font-semibold tracking-tighter text-center mb-10'>
         Casos de Éxito.
       </h2>
 
       {/* Logos */}
-      <div className='flex flex-wrap justify-around items-center content-center gap-6 mb-10 '>
-        {successCases.map((item) => (
-          <button
-            key={item.id}
-            onClick={() => setActiveId(item.id)}
-            className={`p-2 rounded transition duration-300 hover:scale-105 ${
-              item.id === activeId ? ' rounded-2xl' : 'grayscale opacity-60'
-            }`}>
-            <Image
-              src={item.logo}
-              alt={item.title}
-              width={100}
-              height={80}
-              className=''
-            />
-          </button>
-        ))}
-      </div>
+      <div className='flex flex-col md:flex-row '>
+        <div className='order-1 md:order-2  flex flex-row md:flex-col flex-wrap justify-around items-center content-center gap-6 md:gap-4 w-full md:w-1/3 lg:w-1/4 '>
+          {successCases.map((item) => (
+            <button
+              key={item.id}
+              onClick={() => setActiveId(item.id)}
+              className={`p-2 rounded transition duration-300 hover:scale-105 ${
+                item.id === activeId ? ' rounded-2xl' : 'grayscale opacity-60'
+              }`}>
+              <Image
+                src={item.logo}
+                alt={item.title}
+                width={100}
+                height={80}
+                className=''
+              />
+            </button>
+          ))}
+        </div>
 
-      {/* Active Testimonial */}
-      <div className='flex flex-col md:grid grid-cols-1 md:grid-cols-2  flex-1   '>
-        <div className='flex flex-col justify-between gap-4 '>
+        {/* Active Testimonial */}
+        <div className='order-2 md:order-1 h-full flex  flex-col justify-center items-center  w-full md:w-2/3 lg:w-3/4 gap-8 '>
           <div className='flex flex-col gap-4'>
             <h3 className='text-[2.5rem] md:text-[4rem]  font-light text-black'>
               Testimonios
@@ -104,12 +104,12 @@ export default function StackedSuccessCases() {
             <p className='md:text-[2.1rem] text-[1.7rem] font-light'>
               {activeCase.clientTitleReview}
             </p>
-            <p className='text-[0.8rem] md:text-[1rem]  max-w-[75%]  font-semibold text-black'>
+            <p className='text-[0.8rem] md:text-[1rem]    font-semibold text-black'>
               “{activeCase.clientReview}”
             </p>
           </div>
           <div className=' flex lg:self-start gap-3 my-4 '>
-            <div className='w-16 h-auto'>
+            <div className=' h-auto'>
               <Image
                 src={activeCase.logo}
                 alt='logo empresa'
@@ -127,16 +127,6 @@ export default function StackedSuccessCases() {
               </p>
             </div>
           </div>
-        </div>
-
-        <div className='flex  w-full md:justify-center justify-center '>
-          <Image
-            src={activeCase.logo}
-            alt={activeCase.clientName}
-            width={400}
-            height={500}
-            className='rounded-lg object-contain'
-          />
         </div>
       </div>
     </section>
