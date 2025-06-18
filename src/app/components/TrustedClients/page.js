@@ -65,7 +65,7 @@ export default function StackedSuccessCases() {
   return (
     <section
       id='Testimonios'
-      className='w-full mx-auto md:px-16 px-4 py-12 bg-white border-blue-100 rounded-lg md:mt-32 mt-8 container'>
+      className='w-full mx-auto md:px-16 px-4 py-12 bg-white border-blue-100 rounded-lg md:mt-24 mt-8 container'>
       <h2 className='text-[3rem] md:text-[4.8rem] font-semibold tracking-tighter text-center mb-10'>
         Casos de Éxito.
       </h2>
