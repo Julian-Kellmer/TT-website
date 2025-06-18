@@ -23,8 +23,8 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  const pathname =usePathname()
-  const isHome=pathname==='/'
+  const pathname = usePathname()
+  const isHome = pathname === '/'
 
   const handleCatalogClick = () => {
     if (!isCatalogOpen) setShowCatalog(true)
@@ -60,9 +60,9 @@ const Header = () => {
 
   return (
     <header
-  className={`fixed top-0 left-0 w-full z-50 px-4 md:px-32 py-2 ${
-    isHome ? (scrolled ? 'md:py-2' : 'md:py-10') : 'md:py-2'
-  } transition-all duration-300`}>
+      className={`fixed top-0 left-0 w-full z-50 px-4 md:px-32 py-12 ${
+        isHome ? (scrolled ? 'md:py-2 py-4' : 'md:py-10 py-4') : 'md:py-2'
+      } transition-all duration-300`}>
       {/* NAV DESKTOP */}
       <nav
         className={`hidden lg:flex items-center justify-between px-16 py-2 bg-[#eaeaea] rounded`}>

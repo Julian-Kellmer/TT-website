@@ -39,6 +39,7 @@ export default function ResponsiveFooter() {
                 target='_blank'>
                 Ventas@tengotecno.com.ar
               </a>
+              <br/>
               <a
                 href='https://maps.app.goo.gl/DVmF2pDqMK4C5ZmW9'
                 target='_blank'>
@@ -275,6 +276,7 @@ export default function ResponsiveFooter() {
                 target='_blank'>
                 Ventas@tengotecno.com.ar
               </a>
+              <br/>
               <a
                 href='https://maps.app.goo.gl/DVmF2pDqMK4C5ZmW9'
                 target='_blank'>

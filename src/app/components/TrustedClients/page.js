@@ -123,7 +123,7 @@ export default function StackedSuccessCases() {
                 {activeCase.clientName}
               </p>
               <p className=' text-sm lg:text-xl text-gray-500'>
-                {activeCase.clientRole} • {activeCase.title}
+                {activeCase.clientRole}  
               </p>
             </div>
           </div>

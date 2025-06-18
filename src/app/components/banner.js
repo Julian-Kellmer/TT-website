@@ -2,7 +2,7 @@ import React from 'react'
 
 const Banner = () => {
   return (
-    <div className='  stock-ticker '>
+    <div className='  stock-ticker  '>
       <ul className='whitespace-nowrap animate-marquee text-white flex gap-64 items-center '>
         <li>
           <span>Soporte 24/7</span>{' '}

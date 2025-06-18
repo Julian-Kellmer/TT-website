@@ -7,20 +7,20 @@ const steps = [
   {
     title: 'Elegí el producto y sus opciones',
     description:
-      'Navegá por nuestra web, seleccioná el producto que te interesa y, si aplica, elegí las variantes disponibles (como color, almacenamiento o procesador).',
-    videoPlaceholder: '/images/banners/banner2.jpg',
+      'Explora nuestra web y selecciona el producto que te interesa. Si corresponde, elige las variantes disponibles, como procesador, RAM y almacenamiento, para personalizar tu compra según tus necesidades.',
+    video: '/images/banners/Video1.mp4',
   },
   {
     title: 'Hacé clic en “Consultar Ahora',
     description:
-      'Te redirigimos automáticamente a un chat con nuestro asesor, ya con el producto y las opciones seleccionadas.',
-    videoPlaceholder: '/images/banners/banner2.jpg',
+      'Una vez que hayas seleccionado tu producto y opciones, Hacé clic en el botón "Comprar". Vas a ser redirigido automáticamente a un chat con uno de nuestros asesores, quien tendrá acceso a la información de tu compra.',
+    video: '/images/banners/Video2.mp4',
   },
   {
     title: 'Coordiná todo con el asesor',
     description:
-      'Vas a poder definir medio de pago, envío o retiro por nuestras oficinas de forma rápida y segura.',
-    videoPlaceholder: '/images/banners/banner2.jpg',
+      'En el chat, podrás definir los detalles finales de tu compra, incluyendo el medio de pago, envío o retiro en nuestras oficinas. Nuestros asesores están disponibles para ayudarte de manera rápida y segura.',
+    video: '/images/banners/Video3.mp4',
   },
 ]
 
@@ -66,13 +66,13 @@ const TengoTecnoGuide = () => {
   }, [currentStep])
 
   return (
-    <div className='flex flex-col mt-[15vh] h-screen bg-white overflow-hidden'>
+    <div className='flex flex-col mt-[6vh] h-screen bg-white overflow-hidden'>
       <header className='text-center pt-8 pb-4 px-4'>
         <h1 className='text-3xl font-bold text-gray-900 sm:text-4xl mb-1'>
           Comprar en Tengo Tecno siempre fue fácil.
         </h1>
         <p className='text-gray-600'>
-          Seguí estos simples pasos y descubrí lo simple que es.
+          Seguí estos pasos para completar tu compra
         </p>
       </header>
 
@@ -90,13 +90,12 @@ const TengoTecnoGuide = () => {
           <div
             key={index}
             ref={(el) => (stepRefs.current[index] = el)}
-            className='min-h-full snap-start'>
-            <Step
-              number={index + 1}
+            className='min-h-full snap-start '>
+            <video
+              controls
+              className='w-full max-w-3xl h-auto rounded-lg mx-auto'
+              src={step.video}
               title={step.title}
-              description={step.description}
-              videoPlaceholder={step.videoPlaceholder}
-              isActive={currentStep === index}
             />
           </div>
         ))}
