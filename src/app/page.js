@@ -24,7 +24,7 @@ const page = () => {
   return (
     <div className='w-full relative flex flex-col '>
       <Banner />
-      <AutoCarousel images={carouselImages} />
+      <AutoCarousel  />
       <CategoryCarrusel id='Categorias' />
       {/* <TtNumbers /> */}
       <MostValuedProducts />

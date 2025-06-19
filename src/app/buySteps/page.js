@@ -69,7 +69,7 @@ const TengoTecnoGuide = () => {
     <div className='flex flex-col mt-[6vh] h-screen bg-white overflow-hidden'>
       <header className='text-center pt-8 pb-4 px-4'>
         <h1 className='text-3xl font-bold text-gray-900 sm:text-4xl mb-1'>
-          Comprar en Tengo Tecno siempre fue fácil.
+          Comprar en Tengo Todo Tecno siempre fue fácil.
         </h1>
         <p className='text-gray-600'>
           Seguí estos pasos para completar tu compra
