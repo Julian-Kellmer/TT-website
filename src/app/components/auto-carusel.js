@@ -5,15 +5,15 @@ import Image from 'next/image'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 const carouselImages = [
   {
-    src: '/images/banners/Banners2-01.jpg',
+    src: '/images/banners/ipad.jpg',
     alt: 'Eleva tu experiencia. Descubre lo mejor en tecnología.',
   },
   {
-    src: '/images/banners/Banners3-01.jpg',
+    src: '/images/banners/macbook.jpg',
     alt: 'Productos de última generación',
   },
   {
-    src: '/images/banners/Banners-01.jpg',
+    src: '/images/banners/notebook.jpg',
     alt: 'Garantía extendida en todos nuestros productos',
   },
 ]
