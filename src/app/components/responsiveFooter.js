@@ -35,9 +35,9 @@ export default function ResponsiveFooter() {
             </div>
             <div className='space-y-2 text-gray-600'>
               <a
-                href='mailto:Ventas@tengotecno.com.ar'
+                href='mailto:tengotodotecno@gmail.com'
                 target='_blank'>
-                Ventas@tengotecno.com.ar
+                tengotodotecno@gmail.com
               </a>
               <br/>
               <a
@@ -272,9 +272,9 @@ export default function ResponsiveFooter() {
             </div>
             <div className='space-y-2 text-gray-600'>
               <a
-                href='mailto:Ventas@tengotecno.com.ar'
+                href='mailto:tengotodotecno@gmail.com'
                 target='_blank'>
-                Ventas@tengotecno.com.ar
+                tengotodotecno@gmail.com
               </a>
               <br/>
               <a

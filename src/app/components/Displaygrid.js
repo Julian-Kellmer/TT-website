@@ -131,6 +131,7 @@ const Displaygrid = ({ category, products }) => {
                         sizes='(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw'
                         priority
                         src={secondImage}
+                        // placeholder='blur'
                         alt={`${product.name} alternate`}
                         fill
                         className='object-contain absolute inset-0 transition-opacity duration-300 ease-in-out opacity-0 group-hover:opacity-100'
@@ -147,7 +148,7 @@ const Displaygrid = ({ category, products }) => {
 
                     <h3 className='text-lg font-medium'>{product.name}</h3>
                     <div className='flex text-center justify-center gap-2  mt-2'>
-                      <p className='text-gray-600 text-xl '>Desde</p>
+                      {/* <p className='text-gray-600 text-xl '>Desde</p> */}
                       <p className='text-xl font-bold mb-2'>{product.price} </p>
                     </div>
                   </div>
