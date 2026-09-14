@@ -21,7 +21,7 @@ export default function RecommendedProducts() {
     fetch('/api/mas-vendidos')
       .then((res) => res.json())
       .then((data) => {
-        setProductos(data)
+        setProductos(Array.isArray(data) ? data : [])
         setLoading(false)
       })
       .catch((err) => {

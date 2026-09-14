@@ -3,7 +3,10 @@ export async function getMasVendidos() {
     `https://opensheet.elk.sh/1MX4ALW2TJbmfB28e_bHec2ZrGuGrCLo8XCYFj-4ztVw/masvendidos`
   )
   const data = await res.json()
-  console.log(data)
+
+  if (!Array.isArray(data)) {
+    throw new Error('Respuesta inesperada al obtener más vendidos')
+  }
 
   return data.map(({ id, name, category, price, brand, image, desc }) => ({
     id,
