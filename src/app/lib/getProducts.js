@@ -1,4 +1,31 @@
+const cache = new Map()
+const CACHE_TIME = 1000 * 60 * 5 // 5 minutos
+
 export async function getProducts({ category }) {
+  const now = Date.now()
+  const cached = cache.get(category)
+
+  if (cached && now - cached.timestamp < CACHE_TIME) {
+    return cached.data
+  }
+
+  try {
+    const productos = await fetchProducts(category)
+    cache.set(category, { data: productos, timestamp: now })
+    return productos
+  } catch (error) {
+    if (cached) {
+      console.warn(
+        `Sirviendo caché anterior de "${category}" por fallo en la fuente externa:`,
+        error
+      )
+      return cached.data
+    }
+    throw error
+  }
+}
+
+async function fetchProducts(category) {
   const res = await fetch(
     `https://opensheet.elk.sh/1MX4ALW2TJbmfB28e_bHec2ZrGuGrCLo8XCYFj-4ztVw/${category}`
   )
@@ -54,3 +81,4 @@ export async function getProducts({ category }) {
 
   return productos
 }
+

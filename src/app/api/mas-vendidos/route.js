@@ -15,6 +15,12 @@ export async function GET() {
       lastFetched = now
     } catch (error) {
       console.error('Error al obtener más vendidos:', error)
+
+      if (cache) {
+        console.warn('Sirviendo caché anterior de más vendidos por fallo en la fuente externa')
+        return NextResponse.json(cache)
+      }
+
       return NextResponse.json({ error: 'Error al cargar datos' }, { status: 500 })
     }
   }
