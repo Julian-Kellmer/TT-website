@@ -4,6 +4,10 @@ export async function getProducts({ category }) {
   )
   const data = await res.json()
 
+  if (!Array.isArray(data)) {
+    throw new Error(`Respuesta inesperada al obtener productos de "${category}"`)
+  }
+
   const productos = data.map((item, index) => {
     let parsedDescSpecs = []
     let parsedTechSpecs = []

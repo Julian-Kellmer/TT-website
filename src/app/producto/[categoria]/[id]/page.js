@@ -4,7 +4,21 @@ import { getProducts } from '../../../lib/getProducts'
 
 export default async function ProductPage({ params }) {
   const { categoria, id } = await params
-  const products = await getProducts({ category: categoria })
+
+  let products = []
+  try {
+    products = await getProducts({ category: categoria })
+  } catch (error) {
+    console.error('Error al obtener el producto:', error)
+    return (
+      <div className='container mx-auto px-4 py-8 mt-16'>
+        <h1 className='text-2xl font-bold text-center text-red-600'>
+          No se pudo cargar el producto, intenta nuevamente más tarde
+        </h1>
+      </div>
+    )
+  }
+
   const selectProduct = products.find((p) => p.id === id)
   if (!selectProduct) {
     console.log(
