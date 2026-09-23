@@ -1,0 +1,172 @@
+/* Tailwind (globals.css) resetea el estilo nativo de inputs/botones sin
+   reponer nada — este archivo le devuelve una apariencia visible al panel
+   admin, que usa HTML plano en vez de clases de Tailwind. */
+
+.admin-panel {
+  font-family: system-ui, -apple-system, sans-serif;
+  color: #171717;
+}
+
+.admin-panel a {
+  color: #171717;
+  text-decoration: underline;
+}
+
+.admin-panel label {
+  font-size: 14px;
+  font-weight: 500;
+  display: block;
+}
+
+.admin-panel input,
+.admin-panel textarea,
+.admin-panel select {
+  display: block;
+  margin-top: 4px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: #fff;
+  color: #171717;
+  font-size: 14px;
+  font-family: inherit;
+}
+
+.admin-panel input[type='checkbox'] {
+  display: inline-block;
+  width: auto;
+  margin: 0 6px 0 0;
+  accent-color: #171717;
+}
+
+.admin-panel input:focus,
+.admin-panel textarea:focus,
+.admin-panel select:focus {
+  outline: 2px solid #171717;
+  outline-offset: 1px;
+}
+
+.admin-panel fieldset {
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 12px;
+}
+
+.admin-panel .category-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.admin-panel .category-tag {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 14px;
+  border: 1px solid #ccc;
+  border-radius: 999px;
+  background: #fff;
+  color: #171717;
+  font-size: 13px;
+  font-weight: 400;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+
+.admin-panel .category-tag:hover {
+  border-color: #171717;
+}
+
+.admin-panel .category-tag input[type='checkbox'] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  margin: 0;
+}
+
+.admin-panel .category-tag:has(input:checked) {
+  background: #171717;
+  border-color: #171717;
+  color: #fff;
+}
+
+.admin-panel .category-tag:has(input:focus-visible) {
+  outline: 2px solid #171717;
+  outline-offset: 2px;
+}
+
+.admin-panel .variants-field {
+  display: grid;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.admin-panel .variant-row {
+  display: grid;
+  grid-template-columns: 1fr 140px auto;
+  gap: 8px;
+  align-items: center;
+}
+
+.admin-panel .variant-row input {
+  margin-top: 0;
+  padding: 6px 8px;
+}
+
+.admin-panel .variant-row button {
+  width: 32px;
+  height: 32px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: #fff;
+  color: #a00;
+  font-size: 16px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.admin-panel .variant-row button:hover {
+  border-color: #a00;
+  background: #fff5f5;
+}
+
+.admin-panel .variant-add-btn {
+  justify-self: start;
+  padding: 6px 12px;
+  border: 1px dashed #999;
+  border-radius: 6px;
+  background: #fff;
+  color: #171717;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.admin-panel .variant-add-btn:hover {
+  border-color: #171717;
+  background: #f7f7f7;
+}
+
+.admin-panel button[type='submit'] {
+  background: #171717;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 14px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.admin-panel button[type='submit']:hover {
+  background: #333;
+}
+
+.admin-panel table {
+  border: 1px solid #eee;
+}
+
+.admin-panel th,
+.admin-panel td {
+  border-bottom: 1px solid #eee;
+}

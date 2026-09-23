@@ -1,8 +1,6 @@
 import { Geist, Geist_Mono, Inter } from 'next/font/google'
 import './globals.css'
-import Header from './components/header'
-import ResponsiveFooter from './components/responsiveFooter'
-import WhatsapFloat from './components/WhatsapFloat'
+import SiteChrome from './components/SiteChrome'
 import Image from 'next/image'
 const inter = Inter({
   variable: '--font-inter',
@@ -19,10 +17,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang='en'>
       <body className={`${inter.variable} antialiased relative w-full h-full `}>
-        <WhatsapFloat />
-        <Header className='z-100' />
-        {children}
-        <ResponsiveFooter />
+        <SiteChrome>{children}</SiteChrome>
       </body>
     </html>
   )
