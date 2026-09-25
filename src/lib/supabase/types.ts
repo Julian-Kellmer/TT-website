@@ -103,7 +103,7 @@ export type Database = {
           id: string
           name: string
           position: number
-          price: number
+          price: number | null
           product_id: string
         }
         Insert: {
@@ -111,7 +111,7 @@ export type Database = {
           id?: string
           name: string
           position?: number
-          price: number
+          price: number | null
           product_id: string
         }
         Update: {
@@ -119,7 +119,7 @@ export type Database = {
           id?: string
           name?: string
           position?: number
-          price?: number
+          price?: number | null
           product_id?: string
         }
         Relationships: [
@@ -139,7 +139,7 @@ export type Database = {
           description: string | null
           id: string
           name: string
-          price: number
+          price: number | null
           slug: string
           stock: number
           updated_at: string
@@ -150,7 +150,7 @@ export type Database = {
           description?: string | null
           id?: string
           name: string
-          price: number
+          price: number | null
           slug: string
           stock?: number
           updated_at?: string
@@ -161,7 +161,7 @@ export type Database = {
           description?: string | null
           id?: string
           name?: string
-          price?: number
+          price?: number | null
           slug?: string
           stock?: number
           updated_at?: string

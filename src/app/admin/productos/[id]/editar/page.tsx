@@ -17,7 +17,7 @@ export default async function EditarProductoPage({
   const { data: product } = await supabase
     .from("products")
     .select(
-      "id, name, slug, description, price, stock, active, product_categories(category_id), product_images(id, storage_path, position), product_variants(name, price, position)"
+      "id, name, slug, description, price, active, product_categories(category_id), product_images(id, storage_path, position), product_variants(name, price, position)"
     )
     .eq("id", id)
     .single();
@@ -57,14 +57,13 @@ export default async function EditarProductoPage({
           />
         </label>
         <label>
-          Precio {"("}se usa si el producto no tiene variantes{")"}
+          Precio (opcional, se usa si el producto no tiene variantes)
           <input
             name="price"
             type="number"
             step="0.01"
             min="0"
-            defaultValue={product.price}
-            required
+            defaultValue={product.price ?? ""}
             style={{ width: "100%", padding: 6 }}
           />
         </label>
@@ -74,17 +73,6 @@ export default async function EditarProductoPage({
           <VariantsField initialVariants={variants} />
         </fieldset>
 
-        <label>
-          Stock
-          <input
-            name="stock"
-            type="number"
-            step="1"
-            min="0"
-            defaultValue={product.stock}
-            style={{ width: "100%", padding: 6 }}
-          />
-        </label>
         <label>
           <input name="active" type="checkbox" defaultChecked={product.active} /> Activo
         </label>

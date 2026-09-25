@@ -29,13 +29,12 @@ export default async function NuevoProductoPage() {
           <textarea name="description" rows={4} style={{ width: "100%", padding: 6 }} />
         </label>
         <label>
-          Precio {"("}se usa si el producto no tiene variantes{")"}
+          Precio (opcional, se usa si el producto no tiene variantes)
           <input
             name="price"
             type="number"
             step="0.01"
             min="0"
-            required
             style={{ width: "100%", padding: 6 }}
           />
         </label>
@@ -45,17 +44,6 @@ export default async function NuevoProductoPage() {
           <VariantsField />
         </fieldset>
 
-        <label>
-          Stock
-          <input
-            name="stock"
-            type="number"
-            step="1"
-            min="0"
-            defaultValue={0}
-            style={{ width: "100%", padding: 6 }}
-          />
-        </label>
         <label>
           <input name="active" type="checkbox" defaultChecked /> Activo (visible en la tienda)
         </label>

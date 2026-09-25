@@ -7,10 +7,10 @@ type Variant = { name: string; price: string };
 export default function VariantsField({
   initialVariants = [],
 }: {
-  initialVariants?: { name: string; price: number }[];
+  initialVariants?: { name: string; price: number | null }[];
 }) {
   const [variants, setVariants] = useState<Variant[]>(
-    initialVariants.map((v) => ({ name: v.name, price: String(v.price) }))
+    initialVariants.map((v) => ({ name: v.name, price: v.price === null ? "" : String(v.price) }))
   );
 
   function addVariant() {
@@ -40,7 +40,7 @@ export default function VariantsField({
             type="number"
             step="0.01"
             min="0"
-            placeholder="Precio"
+            placeholder="Precio (opcional)"
             value={variant.price}
             onChange={(e) => updateVariant(index, "price", e.target.value)}
           />

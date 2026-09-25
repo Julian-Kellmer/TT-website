@@ -43,18 +43,22 @@ async function uploadImagesForProduct(supabase: AdminClient, productId: string, 
 function parseCommonFields(formData: FormData) {
   const name = String(formData.get("name") ?? "").trim();
   const description = String(formData.get("description") ?? "").trim() || null;
-  const price = Number(formData.get("price"));
-  const stock = Number(formData.get("stock") ?? 0);
+  const price = parsePrice(formData.get("price"));
   const active = formData.get("active") === "on";
   const slugInput = String(formData.get("slug") ?? "").trim();
   const categoryIds = formData.getAll("categories").map(String);
 
   if (!name) throw new Error("El nombre es obligatorio");
-  if (Number.isNaN(price) || price < 0) throw new Error("Precio inválido");
+  if (price !== null && (Number.isNaN(price) || price < 0)) throw new Error("Precio inválido");
 
   const slug = slugify(slugInput || name);
 
-  return { name, description, price, stock, active, slug, categoryIds };
+  return { name, description, price, active, slug, categoryIds };
+}
+
+function parsePrice(value: FormDataEntryValue | null) {
+  const raw = String(value ?? "").trim();
+  return raw === "" ? null : Number(raw);
 }
 
 function parseVariants(formData: FormData) {
@@ -64,15 +68,19 @@ function parseVariants(formData: FormData) {
   return names
     .map((rawName, index) => ({
       name: rawName.trim(),
-      price: Number(prices[index]),
+      price: parsePrice(prices[index] ?? null),
     }))
-    .filter((variant) => variant.name && !Number.isNaN(variant.price) && variant.price >= 0);
+    .filter(
+      (variant) =>
+        variant.name &&
+        (variant.price === null || (!Number.isNaN(variant.price) && variant.price >= 0))
+    );
 }
 
 async function saveVariantsForProduct(
   supabase: AdminClient,
   productId: string,
-  variants: { name: string; price: number }[]
+  variants: { name: string; price: number | null }[]
 ) {
   await supabase.from("product_variants").delete().eq("product_id", productId);
   if (variants.length > 0) {
@@ -89,12 +97,12 @@ async function saveVariantsForProduct(
 
 export async function createProduct(formData: FormData) {
   const supabase = createAdminClient();
-  const { name, description, price, stock, active, slug, categoryIds } =
+  const { name, description, price, active, slug, categoryIds } =
     parseCommonFields(formData);
 
   const { data: product, error } = await supabase
     .from("products")
-    .insert({ name, slug, description, price, stock, active })
+    .insert({ name, slug, description, price, active })
     .select("id")
     .single();
 
@@ -117,12 +125,12 @@ export async function createProduct(formData: FormData) {
 
 export async function updateProduct(productId: string, formData: FormData) {
   const supabase = createAdminClient();
-  const { name, description, price, stock, active, slug, categoryIds } =
+  const { name, description, price, active, slug, categoryIds } =
     parseCommonFields(formData);
 
   const { error } = await supabase
     .from("products")
-    .update({ name, slug, description, price, stock, active })
+    .update({ name, slug, description, price, active })
     .eq("id", productId);
 
   if (error) throw new Error(error.message);

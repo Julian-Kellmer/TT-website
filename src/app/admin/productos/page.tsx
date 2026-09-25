@@ -9,7 +9,7 @@ export default async function ProductosPage() {
   const supabase = createAdminClient();
   const { data: products } = await supabase
     .from("products")
-    .select("id, name, price, stock, active, product_images(storage_path, position)")
+    .select("id, name, price, active, product_images(storage_path, position)")
     .order("created_at", { ascending: false });
 
   return (
@@ -25,7 +25,6 @@ export default async function ProductosPage() {
             <th></th>
             <th>Nombre</th>
             <th>Precio</th>
-            <th>Stock</th>
             <th>Activo</th>
             <th></th>
           </tr>
@@ -52,8 +51,7 @@ export default async function ProductosPage() {
                   ) : null}
                 </td>
                 <td>{product.name}</td>
-                <td>${product.price}</td>
-                <td>{product.stock}</td>
+                <td>{product.price === null ? "—" : `$${product.price}`}</td>
                 <td>{product.active ? "Sí" : "No"}</td>
                 <td style={{ display: "flex", gap: 8 }}>
                   <Link href={`/admin/productos/${product.id}/editar`}>Editar</Link>
