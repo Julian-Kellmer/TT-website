@@ -1,20 +1,6 @@
+// "Más vendidos" = productos marcados como destacados en la base de Supabase.
+import { getProductosDestacados } from './tiendaDb'
+
 export async function getMasVendidos() {
-  const res = await fetch(
-    `https://opensheet.elk.sh/1MX4ALW2TJbmfB28e_bHec2ZrGuGrCLo8XCYFj-4ztVw/masvendidos`
-  )
-  const data = await res.json()
-
-  if (!Array.isArray(data)) {
-    throw new Error('Respuesta inesperada al obtener más vendidos')
-  }
-
-  return data.map(({ id, name, category, price, brand, image, desc }) => ({
-    id,
-    name,
-    category,
-    brand,
-    desc,
-    price: Number(price),
-    image: image.split(','),
-  }))
+  return getProductosDestacados()
 }

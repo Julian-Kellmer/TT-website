@@ -3,7 +3,6 @@ import React, { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Badge } from './ui/badge'
-import { Catalog } from '../../mockdata/mockdata'
 
 const getPublicDriveUrl = (url) => {
   const match = url.match(/\/d\/([a-zA-Z0-9_-]+)/)
@@ -15,21 +14,23 @@ const Displaygrid = ({ category, products }) => {
   const [filters, setFilters] = useState(null)
   const [activeFilters, setActiveFilters] = useState({})
 
+  // Los filtros se arman con los valores reales de los productos de la base
+  // (solo se muestra un filtro si hay al menos dos opciones distintas).
   useEffect(() => {
-    if (!category) return
+    if (!products) return
 
-    const categoryObj = Catalog.find((cat) => cat.titulo === category)
-    if (!categoryObj) {
-      setFilters(null)
-      setFilteredProducts([])
-      return
-    }
+    const grupos = ['brand', 'type', 'ram', 'storage', 'size']
+    const nuevosFiltros = {}
+    grupos.forEach((key) => {
+      const valores = [...new Set(products.map((p) => p[key]).filter(Boolean))].sort(
+        (a, b) => String(a).localeCompare(String(b), 'es', { numeric: true })
+      )
+      if (valores.length > 1) nuevosFiltros[key] = valores
+    })
 
-    const { filtros, productos } = categoryObj
-    setFilters(filtros)
-    setFilteredProducts(productos)
+    setFilters(Object.keys(nuevosFiltros).length ? nuevosFiltros : null)
     setActiveFilters({})
-  }, [category])
+  }, [category, products])
 
   useEffect(() => {
     if (!products) return
@@ -108,7 +109,7 @@ const Displaygrid = ({ category, products }) => {
       {filteredProducts?.length > 0 ? (
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 border-t border-gray-200 pt-4'>
           {filteredProducts.map((product) => {
-            const [firstImage, secondImage] =
+            const [firstImage = '/images/TT.svg', secondImage] =
               product.image.map(getPublicDriveUrl)
 
             return (

@@ -1,7 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ['drive.google.com'], // Permitir imágenes desde Google Drive
+    domains: [
+      'drive.google.com', // imágenes viejas de Google Drive
+      'qnhsrnglvaunsayzempx.supabase.co', // fotos de productos de la base nueva (Supabase Storage)
+    ],
   },
 };
 
