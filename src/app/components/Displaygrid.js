@@ -109,7 +109,7 @@ const Displaygrid = ({ category, products }) => {
       {filteredProducts?.length > 0 ? (
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 border-t border-gray-200 pt-4'>
           {filteredProducts.map((product) => {
-            const [firstImage = '/images/TT.svg', secondImage] =
+            const [firstImage = '/images/TT.svg'] =
               product.image.map(getPublicDriveUrl)
 
             return (
@@ -117,7 +117,7 @@ const Displaygrid = ({ category, products }) => {
                 key={product.id}
                 href={`/producto/${category}/${product.id}`}
                 className='border border-gray-200 p-4 rounded-md hover:shadow-md transition-shadow'>
-                <div className='flex flex-col items-center group'>
+                <div className='flex flex-col items-center'>
                   <div className='relative w-[300px] h-[200px] overflow-hidden'>
                     <Image
                       sizes='(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw'
@@ -125,19 +125,8 @@ const Displaygrid = ({ category, products }) => {
                       src={firstImage}
                       alt={product.name}
                       fill
-                      className='object-contain absolute inset-0 transition-opacity duration-300 ease-in-out opacity-100 group-hover:opacity-0'
+                      className='object-contain absolute inset-0'
                     />
-                    {secondImage && (
-                      <Image
-                        sizes='(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw'
-                        priority
-                        src={secondImage}
-                        // placeholder='blur'
-                        alt={`${product.name} alternate`}
-                        fill
-                        className='object-contain absolute inset-0 transition-opacity duration-300 ease-in-out opacity-0 group-hover:opacity-100'
-                      />
-                    )}
                   </div>
 
                   <div className='w-full mt-4 text-center '>
