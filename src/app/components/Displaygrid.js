@@ -116,7 +116,7 @@ const Displaygrid = ({ category, products }) => {
               <Link
                 key={product.id}
                 href={`/producto/${category}/${product.id}`}
-                className='border border-gray-200 p-4 rounded-md hover:shadow-md transition-shadow'>
+                className='border border-gray-200 p-4 rounded-md transition-colors duration-200 hover:bg-gray-50 hover:border-gray-400'>
                 <div className='flex flex-col items-center'>
                   <div className='relative w-[300px] h-[200px] overflow-hidden'>
                     <Image

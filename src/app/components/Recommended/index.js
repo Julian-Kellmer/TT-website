@@ -65,12 +65,12 @@ export default function RecommendedProducts() {
       <div className='sm:hidden flex gap-4 py-4 self-end'>
         <button
           onClick={goToPrev}
-          className=' bg-black bg-opacity-50 text-white rounded-full  w-8 h-8 flex items-center justify-center'>
+          className=' bg-black/50 text-white rounded-full w-8 h-8 flex items-center justify-center transition-colors duration-200 hover:bg-black'>
           ‹
         </button>
         <button
           onClick={goToNext}
-          className=' bg-black bg-opacity-50 text-white rounded-full w-8 h-8 flex items-center justify-center'>
+          className=' bg-black/50 text-white rounded-full w-8 h-8 flex items-center justify-center transition-colors duration-200 hover:bg-black'>
           ›
         </button>
       </div>

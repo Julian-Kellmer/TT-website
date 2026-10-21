@@ -25,7 +25,7 @@ const MoreSellComp = ({ img, title, desc, id, category }) => {
           </h4>
           <p className=' text-gray-500 font-light text-[1rem] '>{desc}</p>
           <div className='self-end'>
-            <button className='px-4 py-2 bg-black text-white  rounded-xl  cursor-pointer'>
+            <button className='px-4 py-2 bg-black text-white rounded-xl cursor-pointer transition-colors duration-200 hover:bg-gray-600'>
               Ver más
             </button>
           </div>

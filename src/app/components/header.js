@@ -110,7 +110,7 @@ const Header = () => {
         </Link>
         <button
           onClick={() => setIsMobileMenuOpen(true)}
-          className='text-2xl'>
+          className='text-2xl transition-colors duration-200 hover:text-gray-500'>
           ☰
         </button>
       </nav>
@@ -133,7 +133,7 @@ const Header = () => {
         <div className='fixed z-50 top-0 left-0 w-full h-full bg-[#1e1e1e] px-8 py-6 flex flex-col gap-6 animate-fade-in'>
           <button
             onClick={() => setIsMobileMenuOpen(false)}
-            className='self-end text-2xl font-bold text-white'>
+            className='self-end text-2xl font-bold text-white transition-colors duration-200 hover:text-gray-400'>
             ✕
           </button>
           <ul className='flex flex-col gap-16 justify-start  '>
@@ -141,7 +141,7 @@ const Header = () => {
               <Link
                 href='/aboutUs'
                 onClick={() => setIsMobileMenuOpen(false)}
-                className='text-white font-semibold tracking-tighter text-6xl'>
+                className='text-white font-semibold tracking-tighter text-6xl transition-colors duration-200 hover:text-gray-400'>
                 Sobre Nosotros
               </Link>
             </li> */}
@@ -150,7 +150,7 @@ const Header = () => {
                 onClick={() => {
                   setIsMobileCatalog(true)
                 }}
-                className='text-white font-semibold tracking-tighter text-6xl'>
+                className='text-white font-semibold tracking-tighter text-6xl transition-colors duration-200 hover:text-gray-400'>
                 Catálogo
               </button>
             </li>
@@ -158,7 +158,7 @@ const Header = () => {
               <Link
                 href='/buySteps'
                 onClick={() => setIsMobileMenuOpen(false)}
-                className='text-white font-semibold tracking-tighter text-6xl'>
+                className='text-white font-semibold tracking-tighter text-6xl transition-colors duration-200 hover:text-gray-400'>
                 Cómo Comprar
               </Link>
             </li>
@@ -171,7 +171,7 @@ const Header = () => {
         <div className='fixed z-50 top-0 left-0 w-full h-full bg-[#1e1e1e] text-white px-4 py-6 flex flex-col gap-4 overflow-y-auto animate-slide-left'>
           <button
             onClick={() => setIsMobileCatalog(false)}
-            className='text-left text-white text-3xl tracking-tighter mb-4'>
+            className='text-left text-white text-3xl tracking-tighter mb-4 transition-colors duration-200 hover:text-gray-400'>
             ← Volver
           </button>
           <div className='flex flex-wrap justify-center gap-4 capitalize'>
